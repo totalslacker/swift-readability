@@ -330,6 +330,8 @@ final class ArticleGrabber: ProcessorBase {
                 // dictionaries must be cleared between attempts to avoid stale lookups (and pointer reuse).
                 readabilityObjects.removeAll(keepingCapacity: true)
                 readabilityDataTable.removeAll(keepingCapacity: true)
+                textLengthCache.removeAll(keepingCapacity: true)
+                linkDensityCache.map.removeAll(keepingCapacity: true)
 
                 if options.stripUnlikelyCandidates {
                     options.stripUnlikelyCandidates = false
